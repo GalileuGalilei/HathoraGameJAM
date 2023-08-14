@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 022a2291b89c82040a8bd048c0fdd537, type: 3}
+  m_Name: HathoraServerConfig
+  m_EditorClassIdentifier: 
+  _hathoraCoreOpts:
+    _appId: 
+    _existingAppsSelectedIndex: 0
+    _existingAppsWithDeploymentWrapper:
+    - _appId: app-8ad079ee-8cce-4b39-b69c-daaf18d82f3d
+      _createdAtWrapper: 08/14/2023 01:56:34
+      _createdBy: 
+      _deletedBy: 
+      _deletedAtWrapper: 
+      _orgId: google-oauth2|100614245826725985067
+      _appSecret: secret-4db3bd15-240a-4c72-afbc-62065048ba1f
+      _appName: multiplayer-gamejam
+      _deploymentWrapper:
+        _planName: 0
+        _transportType: 0
+        _roomsPerProcess: 0
+        _additionalContainerPorts: []
+        _defaultContainerPortWrapper:
+          _transportType: 2
+          _portNumber: 7777
+        _createdAtWrapper: 
+        _createdBy: 
+        _requestedMemoryMB: 0
+        _requestedCPU: 0
+        _deploymentId: 0
+        _buildId: 0
+        _appId: 
+    _devAuthOpts:
+      _devAuthToken: GG7uFHF19EZGQODE6k3jSMffI4_rH7kYdVmKIeJ5-guAX
+      _forceNewToken: 0
+  _linuxHathoraAutoBuildOpts:
+    _serverBuildDirName: Build-Server
+    _serverBuildExeName: Hathora-Unity_LinuxServer.x86_64
+    _isDevBuild: 1
+    _cleanBuildDir: 1
+    _overwriteDockerfile: 1
+  _hathoraDeployOpts:
+    _roomsPerProcess: 1
+    _planNameSelectedIndex: 1
+    _containerPortWrapper:
+      _transportType: 2
+      _portNumber: 7777
+    _transportTypeSelectedIndex: 2
+    _envVars: []
+    _advancedDeployOpts:
+      _keepTempDir: 0
+      additionalTransportInfo1:
+        _transportType: 2
+        _portNumber: 7777
+        _transportNickname: 
+      additionalTransportInfo2:
+        _transportType: 2
+        _portNumber: 7777
+        _transportNickname: 
+  _hathoraLobbyRoomOpts:
+    _hathoraRegion: 1
+    _hathoraRegionSelectedIndexUi: 1
