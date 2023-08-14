@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using FishNet.Object;
-
+using FishNet.Component.Animating;
 
 namespace Platformer.Mechanics
 {
     public class PlayerNetwork : NetworkBehaviour
     {
         private Camera playerCamera;
+        private NetworkAnimator networkAnimator;
+        private Animator animator;
         private PlayerController playerController;
 
         public override void OnStartClient()
@@ -21,6 +23,7 @@ namespace Platformer.Mechanics
             }
 
             playerController = GetComponent<PlayerController>();
+            animator = GetComponent<Animator>();
             playerCamera = Camera.main;
 
             if(playerController == null || playerCamera == null)
@@ -28,7 +31,6 @@ namespace Platformer.Mechanics
                 Debug.LogError("Something got wrong with player network");
             }
         }
-
 
     }
 }

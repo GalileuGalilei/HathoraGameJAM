@@ -16,14 +16,14 @@ MonoBehaviour:
     _appId: 
     _existingAppsSelectedIndex: 0
     _existingAppsWithDeploymentWrapper:
-    - _appId: app-8ad079ee-8cce-4b39-b69c-daaf18d82f3d
-      _createdAtWrapper: 08/14/2023 01:56:34
+    - _appId: app-ce3f1484-fae8-4572-a4c2-9e3c68b78f5f
+      _createdAtWrapper: 08/14/2023 17:46:50
       _createdBy: 
       _deletedBy: 
       _deletedAtWrapper: 
-      _orgId: google-oauth2|100614245826725985067
-      _appSecret: secret-4db3bd15-240a-4c72-afbc-62065048ba1f
-      _appName: multiplayer-gamejam
+      _orgId: auth0|64da686808a66fcacf5df431
+      _appSecret: secret-d8405332-41de-46e6-a4ec-5df58b3d95f5
+      _appName: jogo
       _deploymentWrapper:
         _planName: 0
         _transportType: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
         _buildId: 0
         _appId: 
     _devAuthOpts:
-      _devAuthToken: GG7uFHF19EZGQODE6k3jSMffI4_rH7kYdVmKIeJ5-guAX
+      _devAuthToken: VX7exAcd0loHulUP52BHdb235YaqGhmLE02HeBhcolSvb
       _forceNewToken: 0
   _linuxHathoraAutoBuildOpts:
     _serverBuildDirName: Build-Server
@@ -50,7 +50,7 @@ MonoBehaviour:
     _overwriteDockerfile: 1
   _hathoraDeployOpts:
     _roomsPerProcess: 1
-    _planNameSelectedIndex: 1
+    _planNameSelectedIndex: 2
     _containerPortWrapper:
       _transportType: 2
       _portNumber: 7777
@@ -67,5 +67,5 @@ MonoBehaviour:
         _portNumber: 7777
         _transportNickname: 
   _hathoraLobbyRoomOpts:
-    _hathoraRegion: 1
-    _hathoraRegionSelectedIndexUi: 1
+    _hathoraRegion: 10
+    _hathoraRegionSelectedIndexUi: 4
