@@ -56,6 +56,7 @@ namespace Platformer.Mechanics
             if (controlEnabled)
             {
                 move.x = Input.GetAxis("Horizontal");
+
                 if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
                     jumpState = JumpState.PrepareToJump;
                 else if (Input.GetButtonUp("Jump"))
@@ -119,9 +120,13 @@ namespace Platformer.Mechanics
             }
 
             if (move.x > 0.01f)
+            {
                 spriteRenderer.flipX = false;
+            }
             else if (move.x < -0.01f)
+            {
                 spriteRenderer.flipX = true;
+            }
 
             animator.SetBool("grounded", IsGrounded);
             animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
