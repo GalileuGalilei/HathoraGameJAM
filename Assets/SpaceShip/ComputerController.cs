@@ -14,13 +14,13 @@ public class ComputerController : MonoBehaviour
     GameObject largeHUD;
 
     [SerializeField]
-    private float range = 1.0f;
+    private float range = 5.0f;
     private bool smallHUDState = false;
     private bool largeHUDState = false;
 
     private void Update()
     {
-        float distance = Vector3.Distance(transform.position, player.transform.position);
+        float distance = Vector2.Distance(transform.position, player.transform.position);
 
         if(distance < range)
         {

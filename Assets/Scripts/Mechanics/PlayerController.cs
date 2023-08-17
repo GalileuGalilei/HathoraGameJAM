@@ -42,11 +42,6 @@ namespace Platformer.Mechanics
 
         public Bounds Bounds => collider2d.bounds;
 
-        private Vector2 slopeDir = Vector2.zero;
-        private float slopeCheckDistance = 5f;
-        private bool FacingLeft = false;
-
-
         void Awake()
         {
             health = GetComponent<Health>();
@@ -61,7 +56,6 @@ namespace Platformer.Mechanics
             if (controlEnabled)
             {
                 move.x = Input.GetAxis("Horizontal");
-                SlopeCheckVertical(transform.position);
 
                 if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
                     jumpState = JumpState.PrepareToJump;
@@ -113,7 +107,7 @@ namespace Platformer.Mechanics
         {
             if (jump && IsGrounded)
             {
-                velocity.y = jumpTakeOffSpeed * model.jumpModifier + slopeDir.y;
+                velocity.y = jumpTakeOffSpeed * model.jumpModifier;
                 jump = false;
             }
             else if (stopJump)
@@ -128,41 +122,16 @@ namespace Platformer.Mechanics
             if (move.x > 0.01f)
             {
                 spriteRenderer.flipX = false;
-                FacingLeft = true;
             }
             else if (move.x < -0.01f)
             {
                 spriteRenderer.flipX = true;
-                FacingLeft = true;
             }
 
             animator.SetBool("grounded", IsGrounded);
             animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
             targetVelocity = move * maxSpeed;
-        }
-
-        protected void SlopeCheckVertical(Vector2 checkPos)
-        {
-            checkPos.x += FacingLeft ? 0.25f : -0.25f;
-            RaycastHit2D hit = Physics2D.Raycast(checkPos, Vector2.down, slopeCheckDistance);
-
-            if(hit)
-            {
-                Vector2 aux = hit.normal;
-
-                if(FacingLeft)
-                {
-                    slopeDir.x = -aux.y;
-                    slopeDir.y = aux.x;
-                }
-                else
-                {
-                    slopeDir.x = aux.y;
-                    slopeDir.y = -aux.x;
-                }
-                Debug.Log($"slope dir: {slopeDir}");
-            }
         }
 
         public enum JumpState
