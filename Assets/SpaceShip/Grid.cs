@@ -10,7 +10,7 @@ public class Grid : MonoBehaviour
     [SerializeField]
     private Vector2Int gridDim;
     [SerializeField]
-    private GameObject roomPrefab;
+    public GameObject RoomPrefab;
 
     [SerializeField]
     private RoomController[,] rooms;
@@ -28,7 +28,7 @@ public class Grid : MonoBehaviour
             }
         }
 
-        Mesh mesh = roomPrefab.GetComponent<MeshFilter>().sharedMesh;
+        Mesh mesh = RoomPrefab.GetComponent<MeshFilter>().sharedMesh;
         roomSize = mesh.bounds.size;
         Debug.Log($"carreado room com size {roomSize}");
 
@@ -43,7 +43,7 @@ public class Grid : MonoBehaviour
             return;
         }
 
-        RoomController room = Instantiate(roomPrefab).GetComponent<RoomController>();
+        RoomController room = Instantiate(RoomPrefab).GetComponent<RoomController>();
         Vector2 position = new Vector2(x * roomSize.x, y * roomSize.y);
         position.x += transform.position.x;
         position.y += transform.position.y;
