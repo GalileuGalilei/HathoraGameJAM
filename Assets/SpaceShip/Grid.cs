@@ -95,6 +95,27 @@ public class Grid : MonoBehaviour
         }
     }
 
+    public void SetAllCanvasExceptRight(bool state)
+    {
+        foreach (RoomController room in rooms)
+        {
+            if (room != null)
+            {
+                GameObject[] windows = room.windows;
+                int count = 0;
+
+                foreach (GameObject window in windows)
+                {
+                    if (window != null && count != 2)
+                    {
+                        window.transform.GetChild(0).gameObject.SetActive(state);
+                    }
+                    count++;
+                }
+            }
+        }
+    }
+
     private void RemoveNeighborWindows()
     {
         for(int x = 0; x < gridDim.x; x++)
