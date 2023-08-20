@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -61,8 +62,27 @@ public class EnemyAI : MonoBehaviour
         }
         else if (aiData.GetTargetsCount() > 0)
         {
+            Transform q = aiData.targets.Where(trg => trg.gameObject.name == "Player").FirstOrDefault();
+            if (q != null)
+            {
+                Vector2 direction = (q.position - transform.position).normalized;
+                RaycastHit2D hit =
+                    Physics2D.Raycast(transform.position, direction, GetComponent<TargetDetector>().playerLayerMask, GetComponent<TargetDetector>().obstaclesLayerMask);
+                if (hit.collider != null)
+                {
+                    aiData.currentTarget = q;
+                }
+                
+            }
+                
             //Target acquisition logic
-            aiData.currentTarget = aiData.targets[0];
+             aiData.currentTarget = aiData.targets[0];
+
+
+        }
+        else
+        {
+
         }
         //Moving the Agent
         OnMovementInput?.Invoke(movementInput);
