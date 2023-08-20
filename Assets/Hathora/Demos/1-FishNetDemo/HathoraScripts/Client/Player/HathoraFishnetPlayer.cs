@@ -27,6 +27,8 @@ namespace Hathora.Demos._1_FishNetDemo.HathoraScripts.Client.Player
             Debug.Log($"[HathoraFishnetPlayer] OnStartNetwork");
         }
 
+      
+
         /// <summary>
         /// Better to use this instead of Start, in most situations.
         /// <summary>Called AFTER OnStartNetwork</summary>

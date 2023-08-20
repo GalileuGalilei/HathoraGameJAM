@@ -46,7 +46,7 @@ namespace Hathora.Demos._1_FishNetDemo.HathoraScripts.Server
 
         
         #region FishNet-Specific Server Handling
-        // TODO
+
         #endregion // FishNet-Specific Server Handling
     }
 }

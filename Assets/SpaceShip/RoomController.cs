@@ -1,9 +1,11 @@
+using FishNet.Connection;
+using FishNet.Object;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
 
-public class RoomController : MonoBehaviour
+public class RoomController : NetworkBehaviour
 {
     [SerializeField]
     public int Cost = 1;
@@ -41,8 +43,9 @@ public class RoomController : MonoBehaviour
         }
     }
 
+    [ServerRpc(RequireOwnership = false)]
     //0 = left, 1 = top, 2 = right, 3 = bottom
-    public void CreateNeighbor(int offset)
+    public void CreateNeighbor(int offset, NetworkConnection client = null)
     {
         int offsetX, offsetY;
         switch (offset)
@@ -71,6 +74,6 @@ public class RoomController : MonoBehaviour
                 return;
         }
 
-        grid.CreateRoom(gridPosition.x + offsetX, gridPosition.y + offsetY);
+        grid.CreateRoom(gridPosition.x + offsetX, gridPosition.y + offsetY, client);
     }
 }

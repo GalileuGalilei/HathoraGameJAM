@@ -1,3 +1,6 @@
+using FishNet;
+using FishNet.Connection;
+using FishNet.Object;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +8,7 @@ using UnityEngine;
 /// <summary>
 /// Grid of rooms of the spaceShip. [0,0] is the bottom left room and also the Transform position of the grid.
 /// </summary>
-public class Grid : MonoBehaviour
+public class Grid : NetworkBehaviour
 {
     [SerializeField]
     private Vector2Int gridDim;
@@ -16,13 +19,16 @@ public class Grid : MonoBehaviour
     private RoomController[,] rooms;
     private Vector2 roomSize;
 
-    void Start()
+    public override void OnStartClient()
     {
+        base.OnStartClient();
+        
+        
         rooms = new RoomController[gridDim.x, gridDim.y];
 
-        for(int i = 0; i < gridDim.x; i++)
+        for (int i = 0; i < gridDim.x; i++)
         {
-            for(int j = 0; j < gridDim.y; j++)
+            for (int j = 0; j < gridDim.y; j++)
             {
                 rooms[i, j] = null;
             }
@@ -30,13 +36,16 @@ public class Grid : MonoBehaviour
 
         Mesh mesh = RoomPrefab.GetComponent<MeshFilter>().sharedMesh;
         roomSize = mesh.bounds.size;
-        Debug.Log($"carreado room com size {roomSize}");
-
+        
+        
         CreateRoom(3, 1);
+        Debug.Log($"carreado room com size {roomSize}");
     }
 
-    public void CreateRoom(int x, int y)
+    [ServerRpc(RequireOwnership = false)]
+    public void CreateRoom(int x, int y, NetworkConnection client = null)
     {
+
         Debug.Log($"x = {x}, y = {y}");
         if (IsOutOfRange(x, y) || rooms[x, y] != null) 
         {
@@ -52,7 +61,9 @@ public class Grid : MonoBehaviour
         room.gridPosition = new Vector2Int(x, y);
         room.grid = this;
         rooms[x, y] = room;
-
+        
+        InstanceFinder.ServerManager.Spawn(room.gameObject, client);
+        InstanceFinder.ServerManager.Spawn(gameObject, client);
         RemoveNeighborWindows();
     }
 
