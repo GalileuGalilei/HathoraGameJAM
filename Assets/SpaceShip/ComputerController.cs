@@ -29,6 +29,7 @@ public class ComputerController : MonoBehaviour
         }
 
         grid.SetCanvas(false);
+        
     }
 
     private void Update()
