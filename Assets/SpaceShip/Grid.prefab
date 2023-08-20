@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridDim: {x: 6, y: 3}
-  roomPrefab: {fileID: 5038614508928377212, guid: d07239aefe76db641840433530f1a409,
+  RoomPrefab: {fileID: 5038614508928377212, guid: 1ae494745c5fa7444bd45e4f73b21f67,
     type: 3}
