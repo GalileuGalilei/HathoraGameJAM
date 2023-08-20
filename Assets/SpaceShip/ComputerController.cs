@@ -5,6 +5,7 @@ using UnityEngine;
 public class ComputerController : MonoBehaviour
 {
     public GameObject player;
+    public Grid grid;
 
     [SerializeField]
     List<GameObject> roomsPrefabs = new List<GameObject>();
@@ -16,7 +17,19 @@ public class ComputerController : MonoBehaviour
     [SerializeField]
     private float range = 5.0f;
     private bool smallHUDState = false;
-    private bool largeHUDState = false;
+
+    public void Start()
+    {
+        grid = GameObject.Find("Grid").GetComponent<Grid>();
+        player = GameObject.Find("Player");
+        if(grid == null && player == null)
+        {
+            Debug.LogError("Grid or player not found");
+            return;
+        }
+
+        grid.SetCanvas(false);
+    }
 
     private void Update()
     {
@@ -44,6 +57,7 @@ public class ComputerController : MonoBehaviour
     public void SetLargeHud(bool state)
     { 
         largeHUD.SetActive(state);
+        grid.SetCanvas(false);
     }
 
     public void SetSmallHud(bool state)
@@ -51,4 +65,11 @@ public class ComputerController : MonoBehaviour
         smallHUD.SetActive(state);
         smallHUDState = state;
     }
+
+    public void OnSelectRoom(int roomIndex)
+    {
+        grid.RoomPrefab = roomsPrefabs[roomIndex];
+        grid.SetCanvas(true);
+    }
+
 }
