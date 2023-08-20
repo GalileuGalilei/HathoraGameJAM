@@ -1,3 +1,4 @@
+using Platformer.Mechanics;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ public class Agent : MonoBehaviour
     private AgentAnimations agentAnimations;
     private AgentMover agentMover;
 
+    [SerializeField] private AIData data;
 
     [SerializeField]
     private InputActionReference movement, attack, pointerPosition;
@@ -23,20 +25,12 @@ public class Agent : MonoBehaviour
         pointerInput = GetPointerInput();
         movementInput = movement.action.ReadValue<Vector2>().normalized;
 
-        agentMover.MovementInput = movementInput;
+        //agentMover.MovementInput = movementInput;
 
         AnimateCharacter();
     }
 
-    private void OnEnable()
-    {
-        attack.action.performed += PerformAttack;
-    }
-
-    private void OnDisable()
-    {
-        attack.action.performed -= PerformAttack;
-    }
+   
 
     private Vector2 GetPointerInput()
     {
@@ -45,9 +39,29 @@ public class Agent : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(mousePos);
     }
 
-    public void PerformAttack(InputAction.CallbackContext obj)
+    public void PerformAttack()
     {
-        Debug.Log("Attack");
+        if(GetComponent<Collider2D>().Distance(data.currentTarget.GetComponent<Collider2D>()).distance < .1f)
+        {
+            Health targetHealth = data.currentTarget.GetComponent<Health>();
+            if (targetHealth == null)
+            {
+                Debug.Log("Objeto target sem script necessário: Health.cs");
+            }
+
+            if (targetHealth.IsAlive)
+            {
+                targetHealth.Decrement();
+                if (targetHealth.IsAlive)
+                    data.currentTarget.gameObject.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("Erro, o objeto ja devia estar morto");
+            }
+        }
+            
+
     }
 
     private void Awake()
