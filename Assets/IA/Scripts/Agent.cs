@@ -52,7 +52,7 @@ public class Agent : MonoBehaviour
             if (targetHealth.IsAlive)
             {
                 targetHealth.Decrement();
-                if (targetHealth.IsAlive)
+                if (!targetHealth.IsAlive)
                     data.currentTarget.gameObject.SetActive(false);
             }
             else
