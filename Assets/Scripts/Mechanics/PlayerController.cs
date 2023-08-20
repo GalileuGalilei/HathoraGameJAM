@@ -5,9 +5,13 @@ using Platformer.Gameplay;
 using static Platformer.Core.Simulation;
 using Platformer.Model;
 using Platformer.Core;
+using FishNet.Object;
+using FishNet.Connection;
+
 
 namespace Platformer.Mechanics
 {
+
     /// <summary>
     /// This is the main class used to implement control of the player.
     /// It is a superset of the AnimationController class, but is inlined to allow for any kind of customisation.
