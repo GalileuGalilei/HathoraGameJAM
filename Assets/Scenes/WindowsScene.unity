@@ -496,6 +496,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1855563743220530734, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
+    - {fileID: 5081938470523140542, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
+    - {fileID: 809787408853447768, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
+    - {fileID: 1890930872454621143, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
+    - {fileID: 5077645752097365835, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
+    - {fileID: -7242139358801283849, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
 --- !u!1001 &6153887165854056717
 PrefabInstance:
@@ -568,7 +573,7 @@ PrefabInstance:
         type: 3}
       propertyPath: RoomPrefab
       value: 
-      objectReference: {fileID: 5038614508928377212, guid: e2afedb04b26fe747a57bed01d3f7e4e,
+      objectReference: {fileID: 8061448662806130057, guid: e2afedb04b26fe747a57bed01d3f7e4e,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4f6420ffdaafb544a46c2a6268723a7, type: 3}

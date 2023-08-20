@@ -1807,9 +1807,9 @@ MonoBehaviour:
   player: {fileID: 0}
   grid: {fileID: 0}
   roomsPrefabs:
-  - {fileID: 5038614508928377212, guid: fa8443db22ea61b4493cde0124aa0123, type: 3}
-  - {fileID: 5038614508928377212, guid: 1ae494745c5fa7444bd45e4f73b21f67, type: 3}
-  - {fileID: 5038614508928377212, guid: fa8443db22ea61b4493cde0124aa0123, type: 3}
+  - {fileID: 8653511445743169254, guid: fa8443db22ea61b4493cde0124aa0123, type: 3}
+  - {fileID: 4566479293761392984, guid: 1ae494745c5fa7444bd45e4f73b21f67, type: 3}
+  - {fileID: 3284109449121457301, guid: c4ea100c1dfe0c940aab875a72ed7855, type: 3}
   smallHUD: {fileID: 1410589100143536731}
   largeHUD: {fileID: 1290845134538462948}
   range: 6
