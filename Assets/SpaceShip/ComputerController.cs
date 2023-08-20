@@ -70,6 +70,8 @@ public class ComputerController : MonoBehaviour
     {
         grid.RoomPrefab = roomsPrefabs[roomIndex];
         grid.SetCanvas(true);
+        //if(players.money < grid.RoomPrefab)
+        //grid.SetCanvas(false);
     }
 
 }
