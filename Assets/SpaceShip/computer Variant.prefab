@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4447483357769918456}
   - component: {fileID: 5394884156896761497}
   m_Layer: 5
-  m_Name: Generator (1)
+  m_Name: Health Station
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471790773450728513}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0000041043}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -37,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -347, y: 59}
-  m_SizeDelta: {x: 160, y: 20.2086}
+  m_AnchoredPosition: {x: -316.4, y: 59}
+  m_SizeDelta: {x: 221.2, y: 20.2086}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8168959546495696747
 CanvasRenderer:
@@ -122,14 +122,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2508193641729875921}
         m_TargetAssemblyTypeName: ComputerController, Assembly-CSharp
-        m_MethodName: SetLargeHud
-        m_Mode: 6
+        m_MethodName: OnSelectRoom
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -264,9 +264,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Generator
-
-'
+  m_text: Booster- 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -851,9 +849,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Generator
-
-'
+  m_text: Health Station - 35
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -949,7 +945,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5582291863985242686}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00003670694}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -959,8 +955,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -347, y: 93.104294}
-  m_SizeDelta: {x: 160, y: 20.2086}
+  m_AnchoredPosition: {x: -316.40158, y: 93.104294}
+  m_SizeDelta: {x: 221.1967, y: 20.2086}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &528383192810878544
 CanvasRenderer:
@@ -1044,10 +1040,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2508193641729875921}
         m_TargetAssemblyTypeName: ComputerController, Assembly-CSharp
-        m_MethodName: SetLargeHud
-        m_Mode: 6
+        m_MethodName: OnSelectRoom
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1257,7 +1253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Generator - 25
+  m_text: 'Generator - 20
 
 '
   m_isRightToLeft: 0
@@ -1341,7 +1337,7 @@ GameObject:
   - component: {fileID: 613535952357048578}
   - component: {fileID: 338796160244730033}
   m_Layer: 5
-  m_Name: Generator (2)
+  m_Name: Booster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1355,7 +1351,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8248368705690467261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0000041043}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1365,8 +1361,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -347, y: 25}
-  m_SizeDelta: {x: 160, y: 20.2086}
+  m_AnchoredPosition: {x: -316.39996, y: 25}
+  m_SizeDelta: {x: 221.2, y: 20.2086}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7830387766512239380
 CanvasRenderer:
@@ -1450,14 +1446,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2508193641729875921}
         m_TargetAssemblyTypeName: ComputerController, Assembly-CSharp
-        m_MethodName: SetLargeHud
-        m_Mode: 6
+        m_MethodName: OnSelectRoom
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1809,7 +1805,9 @@ MonoBehaviour:
   player: {fileID: 0}
   grid: {fileID: 0}
   roomsPrefabs:
-  - {fileID: 5038614508928377212, guid: fa8443db22ea61b4493cde0124aa0123, type: 3}
+  - {fileID: 8653511445743169254, guid: fa8443db22ea61b4493cde0124aa0123, type: 3}
+  - {fileID: 4566479293761392984, guid: 1ae494745c5fa7444bd45e4f73b21f67, type: 3}
+  - {fileID: 3284109449121457301, guid: c4ea100c1dfe0c940aab875a72ed7855, type: 3}
   smallHUD: {fileID: 1410589100143536731}
   largeHUD: {fileID: 1290845134538462948}
   range: 6
