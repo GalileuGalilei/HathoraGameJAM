@@ -16,4 +16,3 @@ coisinhas pra serem feitas:
 - arminhas pro player 
 - provavelmente um sistema de inventario
 - upgrades (poder colocar na sala de cura, uma estacao de cura; na sala de armas torretas, upgrades pros propulsores da nave etc.)
-- a porra do multiplayer
