@@ -236783,5 +236783,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun
       objectReference: {fileID: 0}
+    - target: {fileID: 4738323734075562421, guid: 9242d967b7fdeec4397d8d8ac6ac7e94,
+        type: 3}
+      propertyPath: bulletModel
+      value: 
+      objectReference: {fileID: 7020343176885310462, guid: d7e6aa0c7a58df34e8f40d43a31a7632,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9242d967b7fdeec4397d8d8ac6ac7e94, type: 3}
